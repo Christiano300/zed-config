@@ -38,5 +38,53 @@
       "space o": "project_panel::ToggleFocus",
       "space c": "pane::CloseActiveItem"
     }
+  },
+  {
+    "context": "VimControl && !menu && os==windows",
+    "bindings": {
+      "ctrl-alt-[ ctrl-alt-[": "vim::PreviousSectionStart",
+      "ctrl-alt-[ ctrl-alt-]": "vim::PreviousSectionEnd",
+      "ctrl-alt-] m": "vim::NextMethodStart",
+      "ctrl-alt-] M": "vim::NextMethodEnd",
+      "ctrl-alt-[ m": "vim::PreviousMethodStart",
+      "ctrl-alt-[ M": "vim::PreviousMethodEnd",
+      "ctrl-alt-[ *": "vim::PreviousComment",
+      "ctrl-alt-[ /": "vim::PreviousComment",
+
+      "ctrl-alt-] }": ["vim::UnmatchedForward", { "char": "}" }],
+      "ctrl-alt-[ {": ["vim::UnmatchedBackward", { "char": "{" }],
+      "ctrl-alt-] )": ["vim::UnmatchedForward", { "char": ")" }],
+      "ctrl-alt-[ (": ["vim::UnmatchedBackward", { "char": "(" }],
+
+      "g ctrl-alt-]": "editor::GoToDiagnostic",
+      "g ctrl-alt-[": "editor::GoToPrevDiagnostic"
+    }
+  },
+  {
+    "context": "vim_mode == normal && os==windows",
+    "bindings": {
+      "ctrl-alt-[ x": "vim::SelectLargerSyntaxNode",
+      "ctrl-alt-] x": "vim::SelectSmallerSyntaxNode",
+      "ctrl-alt-] d": "editor::GoToDiagnostic",
+      "ctrl-alt-[ d": "editor::GoToPrevDiagnostic",
+      "ctrl-alt-] c": "editor::GoToHunk",
+      "ctrl-alt-[ c": "editor::GoToPrevHunk"
+    }
+  },
+  {
+    "context": "vim_mode == visual && os==windows",
+    "bindings": {
+      "ctrl-alt-[ x": "editor::SelectLargerSyntaxNode",
+      "ctrl-alt-] x": "editor::SelectSmallerSyntaxNode"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing && os==windows",
+    "bindings": {
+      "] c": "project_panel::SelectNextGitEntry",
+      "[ c": "project_panel::SelectPrevGitEntry",
+      "] d": "project_panel::SelectNextDiagnostic",
+      "[ d": "project_panel::SelectPrevDiagnostic"
+    }
   }
 ]
