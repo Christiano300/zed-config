@@ -1,0 +1,42 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "shift shift": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Workspace && os==windows",
+    "bindings": {
+      "ctrl-ö": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "os==linux",
+    "bindings": {
+      "ctrl-odiaeresis": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "Editor && !menu",
+    "bindings": {
+      "ctrl-o": "workspace::Open"
+    }
+  },
+  {
+    "context": "Editor && !menu && vim_mode == normal",
+    "bindings": {
+      "space w": "workspace::Save",
+      "space W": "workspace::SaveAll",
+      "space o": "project_panel::ToggleFocus",
+      "space c": "pane::CloseActiveItem"
+    }
+  }
+]
